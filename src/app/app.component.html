@@ -1,0 +1,116 @@
+<div id="loader">
+
+  <div class="pulse-container">
+    <div class="pulse-bubble pulse-bubble-1"></div>
+    <div class="pulse-bubble pulse-bubble-2"></div>
+    <div class="pulse-bubble pulse-bubble-3"></div>
+
+  </div>
+
+</div>
+<div class="nav mb-0 pr-1">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+      <img src="..\..\assets\Images\TL1.jpg" width="35" height="35" alt=""><a class="navbar-brand" routerLink=""
+        style="color: white;">&nbsp; Tinkerers' Lab</a>
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  <div id="uncheck" class="nav-links ml-auto">
+    <a class="text-primary mobile-view" *ngIf="logged_in">{{user_data.first_name}}
+      {{user_data.last_name}}-{{user_data.roll_number}}</a>
+      <a *ngIf="Check_Technician()" routerLink="technician" routerLinkActive="active-link">Technician</a>
+    <a routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+      true}">Home</a>
+    <a routerLink="about" routerLinkActive="active-link">About</a>
+    <a [href]="events_href" routerLinkActive="active-link">Events</a>
+    <a routerLink="machinestatus" routerLinkActive="active-link">Machine Status</a>
+    <a routerLink="machinetut" routerLinkActive="active-link">Machine Tutorial</a>
+    <a *ngIf="logged_in" routerLink="inventory" routerLinkActive="active-link">Inventory</a>
+    <a routerLink="contact" routerLinkActive="active-link">Contact</a>
+    <a class="dropdown dropdown-toggl" id="dropdown-toggl" *ngIf="logged_in">
+      <a class="btn"><i class="fas fa-2x fa-user-circle "></i>&nbsp;<i class="fas fa-caret-down"></i></a>
+    </a>
+    <a class="pt-2 text-warning mobile-view" *ngIf="logged_in" routerLink="../cart">My Cart</a>
+    <a class="pt-3 text-success mobile-view" *ngIf="logged_in" routerLink="../approved">Issued Items</a>
+    <hr class="rounded mobile-view" *ngIf="logged_in">
+    <a routerLink=""  (click)="logout()" class="mobile-view">Logout</a>
+  </div>
+</div>
+<div *ngIf="logged_in" class="dropdown-men" id="dropdown-men">
+
+  <div class="d-flex flex-column container">
+    <a class="pt-3 pb-4 text-primary">{{user_data.first_name}} {{user_data.last_name}}-{{user_data.roll_number}}</a>
+    <a class="pt-2 text-warning" routerLink="../cart">My Cart</a>
+    <a class="pt-3 text-success" routerLink="../approved">Issued Items</a>
+    <hr class="rounded">
+    <a class="pt-1 pb-2 text-danger" routerLink="" (click)="logout()">Logout</a></div>
+</div>
+
+<router-outlet></router-outlet>
+<button id="scrollBtn" title="Go to top"><i class="fas fa-angle-double-up "></i></button>
+<!-- Footer -->
+<p></p>
+<div class="jumbotron jumbotron-fluid" id="footer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-6">
+        <h1 style="font-family: 'Delius Swash Caps', cursive;">Tinkerers' Lab</h1>
+        <p></p>
+        <a routerLink="contact" class="btn btn-primary">Get in touch</a>
+        <p></p>
+      </div>
+
+      <div class="col-sm-5" id="contact-info">
+        <ul>
+          <li><i class="fas fa-map-marker-alt pr-2"></i><a href="https://goo.gl/maps/7pt9kAvjsNK5zvzDA"
+              target="_blank">N5 Bay, Infinity Corridor, Nr. Mechanical Eng. Dept., IITB</a></li>
+          <li><i class="fas fa-envelope pr-2"></i><a
+              href="mailto:tinkererslaboratory@gmail.com">tinkererslaboratory@gmail.com</a></li>
+          <li><i class="fas fa-phone-alt pr-2"></i><a href="tel://022 2576 4381">022 2576 4381</a></li>
+          <li><i class="fas fa-clock pr-2"></i><span>24*7</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <p></p>
+    </div>
+    <div class="row">
+      <div class="col-sm-5"></div>
+      <div class="col-sm-4">
+        <div>
+          <a class="pr-3" href="https://www.linkedin.com/company/tinkerers-lab/" id="linkedin" target="_blank"><i
+              class="fab fa-linkedin-in fa-2x"></i></a>
+          <a class="pr-3 pl-2" href="https://www.facebook.com/tinkererIITB/" id="facebook" target="_blank"><i
+              class="fab fa-facebook-f fa-2x"></i></a>
+          <a class="pl-2" href="https://www.instagram.com/tinkererslab.iitb/" id="instagram" target="_blank"><i
+              class="fab fa-instagram fa-2x"></i></a>
+        </div>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
+    <div class="row pt-3">
+      <p></p>
+    </div>
+    <div class="row pt-3">
+      <p></p>
+    </div>
+    <div class="row">
+      <div class="col-sm"></div>
+      <div class="col-sm">
+        <h5 style="color: grey;">
+          Copyright<i class="far fa-copyright p-2"></i>{{year}} All rights reserved
+        </h5>
+      </div>
+      <div class="col-sm"></div>
+    </div>
+  </div>
+</div>
