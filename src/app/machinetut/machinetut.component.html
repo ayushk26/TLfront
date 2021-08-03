@@ -1,5 +1,17 @@
-<div class="container text-center">
-  <div *ngFor="let li of lis">
-    {{li.name}}<br>
+<div class="cards">
+  <div class="card" *ngFor="let item of lis">
+    <div class="card-header">
+      {{item.name}}
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>{{item.desc}}</p>
+        <div class="video">
+          <youtube-player videoId={{item.vidlink}} suggestedQuality="highres" [height]="200" [width]="400"
+            [startSeconds]="0">
+          </youtube-player>
+        </div>
+      </blockquote>
+    </div>
   </div>
 </div>

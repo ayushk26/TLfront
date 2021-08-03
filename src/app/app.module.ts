@@ -21,6 +21,8 @@ import { FateComponent } from './fate/fate.component';
 import { MachinestatusComponent } from './machinestatus/machinestatus.component';
 import { FacebookModule } from 'ngx-facebook';
 import { MachinetutComponent } from './machinetut/machinetut.component';
+import { YouTubePlayerModule } from "@angular/youtube-player";
+
 
 
 @NgModule({
@@ -40,39 +42,39 @@ import { MachinetutComponent } from './machinetut/machinetut.component';
 
   ],
   imports: [
-      FormsModule,
-      BrowserModule,
-      RouterModule,
-      HttpClientModule,
-      ReactiveFormsModule,
+    FormsModule,
+    BrowserModule,
+    RouterModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    YouTubePlayerModule,
+    BrowserAnimationsModule,
+    FacebookModule.forRoot(),
+    ToastrModule.forRoot({
+      // preventDuplicates: true
+    }), // ToastrModule added
 
-      BrowserAnimationsModule,
-      FacebookModule.forRoot(),
-      ToastrModule.forRoot({
-        // preventDuplicates: true
-      }), // ToastrModule added
+    ///////////////////////////////////////////////////////
+    RouterModule.forRoot([
 
-      ///////////////////////////////////////////////////////
-      RouterModule.forRoot([
-
-          {path:'',component:HomeComponent},
-          {path:'approved',component:ApprovedComponent},
-          {path:'about',component:AboutComponent},
-          {path:'events',component:EventsComponent},
-          {path:'inventory',component:InventoryComponent},
-          {path:'contact',component:ContactComponent},
-          {path:'cart',component:CartComponent},
-          {path:'login',component:LoginComponent},
-          {path:'technician',component:FateComponent},
-          {path:'machinestatus',component:MachinestatusComponent},
-          {path:'machinetut',component:MachinetutComponent}
-
-
-      ], {scrollPositionRestoration: 'enabled',onSameUrlNavigation: 'reload',anchorScrolling:'enabled'},),
+      { path: '', component: HomeComponent },
+      { path: 'approved', component: ApprovedComponent },
+      { path: 'about', component: AboutComponent },
+      { path: 'events', component: EventsComponent },
+      { path: 'inventory', component: InventoryComponent },
+      { path: 'contact', component: ContactComponent },
+      { path: 'cart', component: CartComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'technician', component: FateComponent },
+      { path: 'machinestatus', component: MachinestatusComponent },
+      { path: 'machinetut', component: MachinetutComponent }
 
 
+    ], { scrollPositionRestoration: 'enabled', onSameUrlNavigation: 'reload', anchorScrolling: 'enabled' }),
 
-      ///////////////////////////////////////////////////////
+
+
+    ///////////////////////////////////////////////////////
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
