@@ -1,66 +1,55 @@
-import { Component, OnInit, AfterViewChecked, Renderer2, SecurityContext } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+declare var $: any;
+import { HttpClient } from '@angular/common/http';
 import { ApiService } from '../api.service';
-declare var $: any
-import { Router } from '@angular/router'
-import { environment } from '../../environments/environment';
-import { Pipe, PipeTransform } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser'
-import { FacebookService, InitParams } from 'ngx-facebook';
 
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
-  styleUrls: ['./events.component.css']
+  styleUrls: ['./events.component.scss']
 })
+export class EventsComponent implements OnInit {
+  items = []
+  events = []
+  lis = [];
 
-export class EventsComponent implements OnInit, AfterViewChecked {
-
-  fblinks = [];
-  srcdoc = [];
-  linkk
-   initParams: InitParams
-  constructor(private fb: FacebookService, private api: ApiService, private router: Router, public sanitizer: DomSanitizer) {
-    this.api.getfblink().subscribe(
-      data => {
-        this.fblinks = data;
-        console.log(data)
-        this.fblinks.forEach(fblink => {
-          fblink.link = this.getUrl(fblink.link)
-        });
-      });
-
-
-    this.linkk = 'https://www.facebook.com/tinkererIITB/posts/1768511736622040'
-    this.initParams = {
-      appId: '763233617543300',
-      xfbml: true,
-      version: 'v7.0'
-    };
-    this.fb.init(this.initParams);
+  constructor(private api: ApiService) {
   }
 
   ngOnInit(): void {
-   
-    setTimeout(function () {
-      console.log(document.querySelector("iframe"));
-      if(document.querySelector("iframe")==null){
-        window.location.reload(true)
-      };
-    }, 3000);
+    //Code for front
+    
 
 
 
-    // for(var i=0;i<=2;i++){
-    // this.srcdoc[i] = this.sanitizer.bypassSecurityTrustHtml('<iframe width="560" height="315" src='+ this.getUrl(this.fblinks[i].link) +' frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
-    // }
+
+
+    //code for api
+
+    this.api.getEvents().subscribe(
+      data => {
+        this.events = data
+        let ev = this.events
+        this.api.getItems().subscribe(
+          items => {
+            this.items = items
+            let itemlist = this.items
+            for (let i = 0; i < ev.length; i++) {
+              let details = ev[i].details;
+              let image = ev[i].image;
+              let link = ev[i].link;
+              let date = ev[i].date;
+              let name = ev[i].name;
+              console.log(name);
+              this.lis.push({ 'name': name, 'description': details, 'imagePath': image, 'extlink': link, 'date':date })
+            }
+            console.log(this.lis)
+          }
+        )
+      }
+    )
+
   }
-  ngAfterViewChecked(): void {
 
-  }
-  getUrl(url) {
-    return this.sanitizer.sanitize(SecurityContext.URL, url);
-  }
 }
-
-
 

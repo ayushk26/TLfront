@@ -93,6 +93,11 @@ export class ApiService {
     return this.http.get(environment.serverUrl+'machineTutorials/',
     {headers: this.httpHeaders});
   }
+  getEvents(): Observable<any>{
+    return this.http.get(environment.serverUrl+'upcomingEvents/',
+    {headers: this.httpHeaders});
+  }
+  
 
 
   updateRequest(req): Observable<any> {
