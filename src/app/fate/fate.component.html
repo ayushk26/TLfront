@@ -1,9 +1,9 @@
 <section>
 
   <div class="example-button-row">
-    <button type="button" class="btn btn-info btn-lg one" (click)="show_requests()">Requests</button>&nbsp;&nbsp;
-    <button type="button" class="btn btn-warning btn-lg two" (click)="show_items()">Items</button>&nbsp;&nbsp;
-    <button type="button" class="btn btn-success btn-lg three" (click)="show_machines()">Machines</button>
+    <button mat-raised-button color="accent" (click)="show_requests()">Requests</button>&nbsp;&nbsp;
+    <button  mat-raised-button color="accent" (click)="show_items()">Items</button>&nbsp;&nbsp;
+    <button  mat-raised-button color="accent" (click)="show_machines()">Machines</button>
   </div>
 </section>
 
@@ -11,7 +11,7 @@
 
 <div class="cd-filter {{filter_1}} ">
   <form>
-    <label class="radio-inline">
+    <!-- <label class="radio-inline">
       <input type="radio" name="optradio" (click)="only_issued()">issued
     </label>
     &nbsp;
@@ -26,7 +26,16 @@
     </label>&nbsp;
     <label class="radio-inline">
       <input type="radio" name="optradio" (click)="all_1()">all
-    </label>&nbsp;
+    </label>&nbsp; -->
+    <mat-radio-group aria-label="Select an option">
+      
+      <mat-radio-button value="1"(click)="only_issued()">issued</mat-radio-button>&nbsp;
+      <mat-radio-button value="2" (click)="only_denied()">denied</mat-radio-button>&nbsp;
+      <mat-radio-button value="3" (click)="only_pending()">pending</mat-radio-button>&nbsp;
+      <mat-radio-button value="4" (click)="only_returned()">returned</mat-radio-button>&nbsp;
+      <mat-radio-button value="5" (click)="all_1()">all</mat-radio-button>&nbsp;
+    </mat-radio-group>
+
   </form>
 
   <a href="#0" class="cd-close"></a>
@@ -34,7 +43,7 @@
 <div class="input-group col-3 {{filter_1}}">
   <input (keydown)="searchButton1($event)" type="text" class="form-control" placeholder="Search for Requests..." [(ngModel)]="roll_number" />
   <div class="input-group-append ">
-    <button class="btn btn-primary" type="button" [disabled]="roll_number==''" (click)="searchTitle()">
+    <button mat-raised-button color="warn" [disabled]="roll_number==''" (click)="searchTitle()">
       Search
     </button>
   </div>
@@ -85,11 +94,11 @@
         {{items[request.item-1].id_required}}</td>
       <td
         *ngIf="(request.is_issued==filter_issued) && (request.is_denied==filter_denied) && (request.is_sent==true) &&(filter_issued==false) && (filter_denied==false)">
-        <button (click)="issue_request(request)">issue</button><button (click)="deny_request(request)">deny</button>
+        <button mat-raised-button color="accent" (click)="issue_request(request)">issue</button><button mat-raised-button color="accent" (click)="deny_request(request)">deny</button>
       </td>
       <td
         *ngIf="(request.is_issued==filter_issued) && (request.is_denied==filter_denied) && (request.is_sent==true) &&(filter_issued==true) && (filter_denied==false) && ((request.is_returned==filter_returned) || (items[request.item-1].is_consumable==filter_consumable))">
-        issued<button *ngIf="request.is_returned==false" (click)="return_request(request)">return</button>
+        issued<button mat-raised-button color="accent" *ngIf="request.is_returned==false" (click)="return_request(request)">return</button>
         <!-- <button (click)="deny_request(request)">deny</button> -->
       </td>
       <td
@@ -106,11 +115,11 @@
       <td *ngIf=" (request.is_sent==true)">{{items[request.item-1].quantity}}</td>
       <td *ngIf=" (request.is_sent==true)">{{request.id}}</td>
       <td *ngIf=" (request.is_sent==true)">{{items[request.item-1].id_required}}</td>
-      <td *ngIf="(request.is_issued==false) && (request.is_sent==true) && (request.is_denied==false) ">pending<button
-          (click)="issue_request(request)">issue</button><button (click)="deny_request(request)">deny</button></td>
+      <td *ngIf="(request.is_issued==false) && (request.is_sent==true) && (request.is_denied==false) ">pending<button mat-raised-button color="accent"
+          (click)="issue_request(request)">issue</button><button mat-raised-button color="accent" (click)="deny_request(request)">deny</button></td>
       <td
         *ngIf="(request.is_issued==true) && (request.is_sent==true) && (request.is_denied==false) && ((request.is_returned==false) || (items[request.item-1].is_consumable==true)) ">
-        issued &nbsp; <button *ngIf="request.is_returned==false" (click)="return_request(request)">return</button>&nbsp;
+        issued &nbsp; <button mat-raised-button color="accent" *ngIf="request.is_returned==false" (click)="return_request(request)">return</button>&nbsp;
       </td>
       <td *ngIf="(request.is_issued==false) && (request.is_sent==true) && (request.is_denied==true) ">denied</td>
       <td *ngIf="(request.is_returned==true) && (request.is_sent==true) && items[request.item-1].is_consumable==false">
@@ -142,7 +151,7 @@
 <div class="input-group col-3 {{filter_2}}">
   <input type="text" (keydown)="searchButton1($event)" class="form-control" placeholder="Search for Items..." [(ngModel)]="item_query" />
   <div class="input-group-append ">
-    <button class="btn btn-primary" type="button" [disabled]="item_query==''" (click)="searchItem()">
+    <button mat-raised-button color="warn" [disabled]="item_query==''" (click)="searchItem()">
       Search
     </button>
   </div>
@@ -175,12 +184,12 @@
       <td>
         ₹{{item.price}}
       </td>
-      <td> <button [disabled]="item.quantity<=1" (click)="decrementQuantity(item)">-</button><input type="text"
-          [(ngModel)]="item.quantity"><button (click)="incrementQuantity(item)">+</button></td>
+      <td> <button mat-raised-button color="accent" [disabled]="item.quantity<=1" (click)="decrementQuantity(item)">-</button><input type="text"
+          [(ngModel)]="item.quantity"><button mat-raised-button color="accent" (click)="incrementQuantity(item)">+</button></td>
       <td *ngIf="item.is_consumable==true" [style.backgroundColor]='item.colour_code'>{{item.colour_code}}</td>
       <td *ngIf="item.is_consumable==false">Not Consumable</td>
       <td>{{item.id_required}}</td>
-      <td><button (click)="save(item)">Save</button></td>
+      <td><button mat-raised-button color="accent" (click)="save(item)">Save</button></td>
     </tr>
   </tbody>
 
@@ -190,7 +199,7 @@
 
 <div class="cd-filter {{filter_3}} ">
   <form>
-    <label class="radio-inline">
+    <!-- <label class="radio-inline">
       <input type="radio" name="optradio" (click)="only_working()">working
     </label>
     &nbsp;
@@ -199,7 +208,14 @@
     </label>&nbsp;
     <label class="radio-inline">
       <input type="radio" name="optradio" (click)="all_3()">all
-    </label>&nbsp;
+    </label>&nbsp; -->
+    <mat-radio-group aria-label="Select an option">
+      
+      <mat-radio-button value="1"(click)="only_working()">working</mat-radio-button>&nbsp;
+      <mat-radio-button value="2" (click)="only_defective()">defective</mat-radio-button>&nbsp;
+      <mat-radio-button value="3" (click)="all_3()">all</mat-radio-button>&nbsp;
+      
+    </mat-radio-group>
   </form>
 
   <a href="#0" class="cd-close"></a>
@@ -207,7 +223,7 @@
 <div class="input-group col-3 {{filter_3}}">
   <input type="text" (keydown)="searchButton3($event)" class="form-control" placeholder="Search for Machines..." [(ngModel)]="machine_query" />
   <div class="input-group-append ">
-    <button class="btn btn-primary"  [disabled]="machine_query==''" type="button" (click)="searchMachine()">
+    <button mat-raised-button color="warn"  [disabled]="machine_query==''"  (click)="searchMachine()">
       Search
     </button>
   </div>
@@ -236,14 +252,14 @@
       <td *ngIf="(machine.status==false)">{{machine.name}}</td>
       <td *ngIf="(machine.status==false)">{{machine.type}}</td>
       <td *ngIf="(machine.status==false)" style="color: rgb(231, 57, 14);">Not working</td>
-      <td *ngIf="(machine.status==false)"><button (click)="change_status(machine)">Mark as working</button></td>
+      <td *ngIf="(machine.status==false)"><button mat-raised-button color="accent" (click)="change_status(machine)">Mark as working</button></td>
     </tr>
     
     <tr class="{{filter_32}}" *ngFor="let machine of machines">
       <td *ngIf="(machine.status==true)">{{machine.name}}</td>
       <td *ngIf="(machine.status==true)">{{machine.type}}</td>
       <td *ngIf="(machine.status==true)" style="color:rgb(20, 194, 20);">Working</td>
-      <td *ngIf="(machine.status==true)"><button (click)="change_status(machine)">Mark as not working</button></td>
+      <td *ngIf="(machine.status==true)"><button mat-raised-button color="accent" (click)="change_status(machine)">Mark as not working</button></td>
     </tr>
   </tbody>
 

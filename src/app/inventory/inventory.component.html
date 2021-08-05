@@ -20,7 +20,7 @@
 </div>
 
 <div *ngIf="searched">
-  <button class="btn btn-secondary" type="button" (click)="hideSearch()">
+  <button  mat-raised-button (click)="hideSearch()">
     Back
   </button>
   <br>
@@ -41,7 +41,8 @@
         <tbody>
           <tr *ngFor="let item of displayItems">
             <td class="itemName" (click)="nameClicked(item.id,$event)">
-              <a class="btn" [style.backgroundColor]='item.colour_code'>{{item.name}}</a>
+              <!-- <a class="btn" [style.backgroundColor]='item.colour_code'>{{item.name}}</a> -->
+              <button mat-raised-button color="accent"> {{item.name}}</button>
               <div (click)="overlayClicked(item)" id={{addD(item.id)}} class="overlay">
                 <div class="expanded">
                   <img src={{item.picture}} alt="Couldn't load">
@@ -59,10 +60,10 @@
             <td id={{item.id}}>
               <a (click)="cartClicked(item.id,$event)" class="fas fa-shopping-cart" id={{addA(item.id)}}></a>
               <div class="specifyQuantity" id={{addB(item.id)}}><span>Quantity <br></span>
-                <button class="btn btn-warning pl-4 pr-4 m-1" [disabled]="newRequest.quantity<=1"
+                <button mat-raised-button color="warn" [disabled]="newRequest.quantity<=1"
                   (click)="decrementQuantity()">-</button>
                 <input class="btn btn-secondary mr-1 ml-1" type="text" [(ngModel)]="newRequest.quantity">
-                <button class="btn btn-warning pl-4 pr-4 m-1" (click)="incrementQuantity()">+</button>
+                <button mat-raised-button color="warn" (click)="incrementQuantity()">+</button>
                 <br>
                 <button class="btn btn-success ml-5" title="Add to Cart"
                   (click)="CreateRequest(item,$event)">Add</button>
@@ -70,7 +71,7 @@
               <div class="addedToCart" id={{addC(item.id)}}>Added To Cart&nbsp;<a routerLink="../cart"
                   title="Go to Cart"><i class="fas fa-shopping-cart"></i></a></div>
             </td>
-            <td><a (click)="reportItem(item)">Report Damage</a></td>
+            <td><button mat-raised-button color="accent" (click)="reportItem(item)">Report Damage</button></td>
             <td *ngIf="!(item.is_flagged)"><a (click)="flagItem(item)"><i class="far fa-flag"></i></a>
             <td *ngIf="(item.is_flagged)"><i style="color: darkgray;" class="far fa-flag"></i>
             </td>
@@ -91,7 +92,7 @@
   <h1>ELECTRONICS</h1>
   <ul>
     <li>
-      <h3><a (click)="display_table(0)">Sensors</a></h3>
+      <h3><button  mat-raised-button color='primary' (click)="display_table(0)">Sensors</button></h3>
       <div class="container {{displayArray[0]}}">
         <div class="table-responsive">
           <table class="table table-striped ">
@@ -108,7 +109,7 @@
             <tbody>
               <tr *ngFor="let item of items">
                 <td class="itemName" (click)="nameClicked(item.id,$event)" *ngIf="item.category==selected_category">
-                  <a class="btn" [style.backgroundColor]='item.colour_code'>{{item.name}}</a>
+                  <button mat-raised-button color="primary" >{{item.name}}</button>
                   <div (click)="overlayClicked(item)" id={{addD(item.id)}} class="overlay">
                     <div class="expanded">
                       <img src={{item.picture}} alt="Couldn't load">
@@ -126,10 +127,10 @@
                 <td id={{item.id}} *ngIf="item.category==selected_category">
                   <a (click)="cartClicked(item.id,$event)" class="fas fa-shopping-cart" id={{addA(item.id)}}></a>
                   <div class="specifyQuantity" id={{addB(item.id)}}><span>Quantity <br></span>
-                    <button class="btn btn-warning pl-4 pr-4 m-1" [disabled]="newRequest.quantity<=1"
+                    <button mat-raised-button color="warn" [disabled]="newRequest.quantity<=1"
                       (click)="decrementQuantity()">-</button>
                     <input class="btn btn-secondary mr-1 ml-1" type="text" [(ngModel)]="newRequest.quantity">
-                    <button class="btn btn-warning pl-4 pr-4 m-1" (click)="incrementQuantity()">+</button>
+                    <button mat-raised-button color="warn" (click)="incrementQuantity()">+</button>
                     <br>
                     <button class="btn btn-success ml-5" title="Add to Cart"
                       (click)="CreateRequest(item,$event)">Add</button>
@@ -151,7 +152,7 @@
     </li>
 
     <li>
-      <h3><a (click)="display_table(1)">PCB Boards</a></h3>
+      <h3><button  mat-raised-button color='primary' (click)="display_table(1)">PCB Boards</button></h3>
       <div class="container {{displayArray[1]}}">
         <div class="table-responsive">
           <table class="table table-striped ">
@@ -168,7 +169,7 @@
             <tbody>
               <tr *ngFor="let item of items">
                 <td class="itemName" (click)="nameClicked(item.id,$event)" *ngIf="item.category==selected_category">
-                  <a class="btn" [style.backgroundColor]='item.colour_code'>{{item.name}}</a>
+                  <button mat-raised-button color="primary" >{{item.name}}</button>
                   <div (click)="overlayClicked(item)" id={{addD(item.id)}} class="overlay">
                     <div class="expanded">
                       <img src={{item.picture}} alt="Couldn't load">
@@ -186,10 +187,10 @@
                 <td id={{item.id}} *ngIf="item.category==selected_category">
                   <a (click)="cartClicked(item.id,$event)" class="fas fa-shopping-cart" id={{addA(item.id)}}></a>
                   <div class="specifyQuantity" id={{addB(item.id)}}><span>Quantity <br></span>
-                    <button class="btn btn-warning pl-4 pr-4 m-1" [disabled]="newRequest.quantity<=1"
+                    <button mat-raised-button color="warn" [disabled]="newRequest.quantity<=1"
                       (click)="decrementQuantity()">-</button>
                     <input class="btn btn-secondary mr-1 ml-1" type="text" [(ngModel)]="newRequest.quantity">
-                    <button class="btn btn-warning pl-4 pr-4 m-1" (click)="incrementQuantity()">+</button>
+                    <button mat-raised-button color="warn" (click)="incrementQuantity()">+</button>
                     <br>
                     <button class="btn btn-success ml-5" title="Add to Cart"
                       (click)="CreateRequest(item,$event)">Add</button>
@@ -210,7 +211,7 @@
       <h3>Consumables</h3>
       <ul>
         <li>
-          <h6><a class="text-info" (click)="display_table(3)">Capacitors</a></h6>
+          <h6><button  mat-raised-button color='warn'  (click)="display_table(3)">Capacitors</button></h6>
           <div class="container {{displayArray[3]}}">
             <div class="table-responsive">
               <table class="table table-striped ">
@@ -227,7 +228,7 @@
                 <tbody>
                   <tr *ngFor="let item of items">
                     <td class="itemName" (click)="nameClicked(item.id,$event)" *ngIf="item.category==selected_category">
-                      <a class="btn" [style.backgroundColor]='item.colour_code'>{{item.name}}</a>
+                      <button mat-raised-button color="warn" >{{item.name}}</button>
                       <div (click)="overlayClicked(item)" id={{addD(item.id)}} class="overlay">
                         <div class="expanded">
                           <img src={{item.picture}} alt="Couldn't load">
@@ -245,10 +246,10 @@
                     <td id={{item.id}} *ngIf="item.category==selected_category">
                       <a (click)="cartClicked(item.id,$event)" class="fas fa-shopping-cart" id={{addA(item.id)}}></a>
                       <div class="specifyQuantity" id={{addB(item.id)}}><span>Quantity <br></span>
-                        <button class="btn btn-warning pl-4 pr-4 m-1" [disabled]="newRequest.quantity<=1"
+                        <button mat-raised-button color="warn" [disabled]="newRequest.quantity<=1"
                           (click)="decrementQuantity()">-</button>
                         <input class="btn btn-secondary mr-1 ml-1" type="text" [(ngModel)]="newRequest.quantity">
-                        <button class="btn btn-warning pl-4 pr-4 m-1" (click)="incrementQuantity()">+</button>
+                        <button mat-raised-button color="warn" (click)="incrementQuantity()">+</button>
                         <br>
                         <button class="btn btn-success ml-5" title="Add to Cart"
                           (click)="CreateRequest(item,$event)">Add</button>
@@ -269,7 +270,7 @@
           </div>
         </li>
         <li>
-          <h6><a class="text-info" (click)="display_table(2)">Resistors</a></h6>
+          <h6><button  mat-raised-button color='warn' (click)="display_table(2)">Resistors</button></h6>
           <div class="container {{displayArray[2]}}">
             <div class="table-responsive">
               <table class="table table-striped ">
@@ -286,7 +287,7 @@
                 <tbody>
                   <tr *ngFor="let item of items">
                     <td class="itemName" (click)="nameClicked(item.id,$event)" *ngIf="item.category==selected_category">
-                      <a class="btn" [style.backgroundColor]='item.colour_code'>{{item.name}}</a>
+                      <button mat-raised-button color="accent" [style.backgroundColor]='item.colour_code'>{{item.name}}</button>
                       <div (click)="overlayClicked(item)" id={{addD(item.id)}} class="overlay">
                         <div class="expanded">
                           <img src={{item.picture}} alt="Couldn't load">
@@ -304,10 +305,10 @@
                     <td id={{item.id}} *ngIf="item.category==selected_category">
                       <a (click)="cartClicked(item.id,$event)" class="fas fa-shopping-cart" id={{addA(item.id)}}></a>
                       <div class="specifyQuantity" id={{addB(item.id)}}><span>Quantity <br></span>
-                        <button class="btn btn-warning pl-4 pr-4 m-1" [disabled]="newRequest.quantity<=1"
+                        <button mat-raised-button color="warn" [disabled]="newRequest.quantity<=1"
                           (click)="decrementQuantity()">-</button>
                         <input class="btn btn-secondary mr-1 ml-1" type="text" [(ngModel)]="newRequest.quantity">
-                        <button class="btn btn-warning pl-4 pr-4 m-1" (click)="incrementQuantity()">+</button>
+                        <button mat-raised-button color="warn" (click)="incrementQuantity()">+</button>
                         <br>
                         <button class="btn btn-success ml-5" title="Add to Cart"
                           (click)="CreateRequest(item,$event)">Add</button>
@@ -328,7 +329,7 @@
           </div>
         </li>
         <li>
-          <h6><a class="text-info" (click)="display_table(4)">Jumpers</a></h6>
+          <h6><button  mat-raised-button color='warn' (click)="display_table(4)">Jumpers</button></h6>
           <div class="container {{displayArray[4]}}">
             <div class="table-responsive">
               <table class="table table-striped ">
@@ -345,7 +346,7 @@
                 <tbody>
                   <tr *ngFor="let item of items">
                     <td class="itemName" (click)="nameClicked(item.id,$event)" *ngIf="item.category==selected_category">
-                      <a class="btn" [style.backgroundColor]='item.colour_code'>{{item.name}}</a>
+                      <button mat-raised-button color="accent" [style.backgroundColor]='item.colour_code'>{{item.name}}</button>
                       <div (click)="overlayClicked(item)" id={{addD(item.id)}} class="overlay">
                         <div class="expanded">
                           <img src={{item.picture}} alt="Couldn't load">
@@ -363,10 +364,10 @@
                     <td id={{item.id}} *ngIf="item.category==selected_category">
                       <a (click)="cartClicked(item.id,$event)" class="fas fa-shopping-cart" id={{addA(item.id)}}></a>
                       <div class="specifyQuantity" id={{addB(item.id)}}><span>Quantity <br></span>
-                        <button class="btn btn-warning pl-4 pr-4 m-1" [disabled]="newRequest.quantity<=1"
+                        <button mat-raised-button color="warn" [disabled]="newRequest.quantity<=1"
                           (click)="decrementQuantity()">-</button>
                         <input class="btn btn-secondary mr-1 ml-1" type="text" [(ngModel)]="newRequest.quantity">
-                        <button class="btn btn-warning pl-4 pr-4 m-1" (click)="incrementQuantity()">+</button>
+                        <button mat-raised-button color="warn" (click)="incrementQuantity()">+</button>
                         <br>
                         <button class="btn btn-success ml-5" title="Add to Cart"
                           (click)="CreateRequest(item,$event)">Add</button>
@@ -387,7 +388,7 @@
           </div>
         </li>
         <li>
-          <h6><a class="text-info" (click)="display_table(5)">LEDs</a></h6>
+          <h6><button  mat-raised-button color='warn' (click)="display_table(5)">LEDs</button></h6>
           <div class="container {{displayArray[5]}}">
             <div class="table-responsive">
               <table class="table table-striped ">
@@ -404,7 +405,7 @@
                 <tbody>
                   <tr *ngFor="let item of items">
                     <td class="itemName" (click)="nameClicked(item.id,$event)" *ngIf="item.category==selected_category">
-                      <a class="btn" [style.backgroundColor]='item.colour_code'>{{item.name}}</a>
+                      <button mat-raised-button color="accent" [style.backgroundColor]='item.colour_code'>{{item.name}}</button>
                       <div (click)="overlayClicked(item)" id={{addD(item.id)}} class="overlay">
                         <div class="expanded">
                           <img src={{item.picture}} alt="Couldn't load">
@@ -422,10 +423,10 @@
                     <td id={{item.id}} *ngIf="item.category==selected_category">
                       <a (click)="cartClicked(item.id,$event)" class="fas fa-shopping-cart" id={{addA(item.id)}}></a>
                       <div class="specifyQuantity" id={{addB(item.id)}}><span>Quantity <br></span>
-                        <button class="btn btn-warning pl-4 pr-4 m-1" [disabled]="newRequest.quantity<=1"
+                        <button mat-raised-button color="warn" [disabled]="newRequest.quantity<=1"
                           (click)="decrementQuantity()">-</button>
                         <input class="btn btn-secondary mr-1 ml-1" type="text" [(ngModel)]="newRequest.quantity">
-                        <button class="btn btn-warning pl-4 pr-4 m-1" (click)="incrementQuantity()">+</button>
+                        <button mat-raised-button color="warn" (click)="incrementQuantity()">+</button>
                         <br>
                         <button class="btn btn-success ml-5" title="Add to Cart"
                           (click)="CreateRequest(item,$event)">Add</button>
@@ -455,7 +456,7 @@
   <h1>MECHANICAL</h1>
   <ul>
     <li>
-      <h3><a (click)="display_table(6)">Power Tools </a></h3>
+      <h3><button  mat-raised-button color='primary' (click)="display_table(6)">Power Tools </button></h3>
       <div class="container {{displayArray[6]}}">
         <div class="table-responsive">
           <table class="table table-striped ">
@@ -472,7 +473,7 @@
             <tbody>
               <tr *ngFor="let item of items">
                 <td class="itemName" (click)="nameClicked(item.id,$event)" *ngIf="item.category==selected_category">
-                  <a class="btn" [style.backgroundColor]='item.colour_code'>{{item.name}}</a>
+                  <button mat-raised-button color="primary" [style.backgroundColor]='item.colour_code'>{{item.name}}</button>
                   <div (click)="overlayClicked(item)" id={{addD(item.id)}} class="overlay">
                     <div class="expanded">
                       <img src={{item.picture}} alt="Couldn't load">
@@ -490,10 +491,10 @@
                 <td id={{item.id}} *ngIf="item.category==selected_category">
                   <a (click)="cartClicked(item.id,$event)" class="fas fa-shopping-cart" id={{addA(item.id)}}></a>
                   <div class="specifyQuantity" id={{addB(item.id)}}><span>Quantity <br></span>
-                    <button class="btn btn-warning pl-4 pr-4 m-1" [disabled]="newRequest.quantity<=1"
+                    <button mat-raised-button color="warn" [disabled]="newRequest.quantity<=1"
                       (click)="decrementQuantity()">-</button>
                     <input class="btn btn-secondary mr-1 ml-1" type="text" [(ngModel)]="newRequest.quantity">
-                    <button class="btn btn-warning pl-4 pr-4 m-1" (click)="incrementQuantity()">+</button>
+                    <button mat-raised-button color="warn" (click)="incrementQuantity()">+</button>
                     <br>
                     <button class="btn btn-success ml-5" title="Add to Cart"
                       (click)="CreateRequest(item,$event)">Add</button>
@@ -515,7 +516,7 @@
       <h3>Consumables</h3>
       <ul>
         <li>
-          <h6><a class="text-info" (click)="display_table(7)">Screws</a></h6>
+          <h6><button  mat-raised-button color='warn' (click)="display_table(7)">Screws</button></h6>
           <div class="container {{displayArray[7]}}">
             <div class="table-responsive">
               <table class="table table-striped ">
@@ -532,7 +533,7 @@
                 <tbody>
                   <tr *ngFor="let item of items">
                     <td class="itemName" (click)="nameClicked(item.id,$event)" *ngIf="item.category==selected_category">
-                      <a class="btn" [style.backgroundColor]='item.colour_code'>{{item.name}}</a>
+                      <button mat-raised-button color="warn" [style.backgroundColor]='item.colour_code'>{{item.name}}</button>
                       <div (click)="overlayClicked(item)" id={{addD(item.id)}} class="overlay">
                         <div class="expanded">
                           <img src={{item.picture}} alt="Couldn't load">
@@ -550,10 +551,10 @@
                     <td id={{item.id}} *ngIf="item.category==selected_category">
                       <a (click)="cartClicked(item.id,$event)" class="fas fa-shopping-cart" id={{addA(item.id)}}></a>
                       <div class="specifyQuantity" id={{addB(item.id)}}><span>Quantity <br></span>
-                        <button class="btn btn-warning pl-4 pr-4 m-1" [disabled]="newRequest.quantity<=1"
+                        <button mat-raised-button color="warn" [disabled]="newRequest.quantity<=1"
                           (click)="decrementQuantity()">-</button>
                         <input class="btn btn-secondary mr-1 ml-1" type="text" [(ngModel)]="newRequest.quantity">
-                        <button class="btn btn-warning pl-4 pr-4 m-1" (click)="incrementQuantity()">+</button>
+                        <button mat-raised-button color="warn" (click)="incrementQuantity()">+</button>
                         <br>
                         <button class="btn btn-success ml-5" title="Add to Cart"
                           (click)="CreateRequest(item,$event)">Add</button>
@@ -574,7 +575,7 @@
           </div>
         </li>
         <li>
-          <h6><a class="text-info" (click)="display_table(8)">Nuts</a></h6>
+          <h6><button  mat-raised-button color='warn' (click)="display_table(8)">Nuts</button></h6>
           <div class="container {{displayArray[8]}}">
             <div class="table-responsive">
               <table class="table table-striped ">
@@ -591,7 +592,7 @@
                 <tbody>
                   <tr *ngFor="let item of items">
                     <td class="itemName" (click)="nameClicked(item.id,$event)" *ngIf="item.category==selected_category">
-                      <a class="btn" [style.backgroundColor]='item.colour_code'>{{item.name}}</a>
+                      <button mat-raised-button color="warn" [style.backgroundColor]='item.colour_code'>{{item.name}}</button>
                       <div (click)="overlayClicked(item)" id={{addD(item.id)}} class="overlay">
                         <div class="expanded">
                           <img src={{item.picture}} alt="Couldn't load">
@@ -609,7 +610,7 @@
                     <td id={{item.id}} *ngIf="item.category==selected_category">
                       <a (click)="cartClicked(item.id,$event)" class="fas fa-shopping-cart" id={{addA(item.id)}}></a>
                       <div class="specifyQuantity" id={{addB(item.id)}}><span>Quantity <br></span>
-                        <button class="btn btn-warning pl-4 pr-4 m-1" [disabled]="newRequest.quantity<=1"
+                        <button mat-raised-button color="warn" [disabled]="newRequest.quantity<=1"
                           (click)="decrementQuantity()">-</button>
                         <input class="btn btn-secondary mr-1 ml-1" type="text" [(ngModel)]="newRequest.quantity">
                         <button class="btn btn-warning pl-4 pr-4 m-1" (click)="incrementQuantity()">+</button>
@@ -633,7 +634,7 @@
           </div>
         </li>
         <li>
-          <h6><a class="text-info" (click)="display_table(9)">Bolts</a></h6>
+          <h6><button  mat-raised-button color='warn' (click)="display_table(9)">Bolts</button></h6>
           <div class="container {{displayArray[9]}}">
             <div class="table-responsive">
               <table class="table table-striped ">
@@ -650,7 +651,7 @@
                 <tbody>
                   <tr *ngFor="let item of items">
                     <td class="itemName" (click)="nameClicked(item.id,$event)" *ngIf="item.category==selected_category">
-                      <a class="btn" [style.backgroundColor]='item.colour_code'>{{item.name}}</a>
+                      <button mat-raised-button color="warn" [style.backgroundColor]='item.colour_code'>{{item.name}}</button>
                       <div (click)="overlayClicked(item)" id={{addD(item.id)}} class="overlay">
                         <div class="expanded">
                           <img src={{item.picture}} alt="Couldn't load">
@@ -668,10 +669,10 @@
                     <td id={{item.id}} *ngIf="item.category==selected_category">
                       <a (click)="cartClicked(item.id,$event)" class="fas fa-shopping-cart" id={{addA(item.id)}}></a>
                       <div class="specifyQuantity" id={{addB(item.id)}}><span>Quantity <br></span>
-                        <button class="btn btn-warning pl-4 pr-4 m-1" [disabled]="newRequest.quantity<=1"
+                        <button mat-raised-button color="warn" [disabled]="newRequest.quantity<=1"
                           (click)="decrementQuantity()">-</button>
                         <input class="btn btn-secondary mr-1 ml-1" type="text" [(ngModel)]="newRequest.quantity">
-                        <button class="btn btn-warning pl-4 pr-4 m-1" (click)="incrementQuantity()">+</button>
+                        <button mat-raised-button color="warn" (click)="incrementQuantity()">+</button>
                         <br>
                         <button class="btn btn-success ml-5" title="Add to Cart"
                           (click)="CreateRequest(item,$event)">Add</button>
