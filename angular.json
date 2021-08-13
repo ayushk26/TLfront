@@ -27,13 +27,29 @@
               "node_modules/ngx-toastr/toastr.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
-              "node_modules/flickity/dist/flickity.min.css"
+              "node_modules/flickity/dist/flickity.min.css",
+              "src/assets/css/aboutus.css",
+              "src/assets/css/counter.css",
+              "src/assets/css/footer.css",
+              "src/assets/css/home1.css",
+              "src/assets/css/index.css",
+              "src/assets/css/navbar.css",
+              "src/assets/css/project.css",
+              "src/assets/css/resource.css",
+              "src/assets/css/resources.css",
+              "src/assets/css/testimonial.css"
             ],
             "scripts": [
               
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/js/new/home.js",
+              "src/assets/js/new/p5.min.js",
+              "src/assets/js/new/text-auto.js",
+              "src/assets/js/new/three.min.js",
+              "src/assets/js/new/vanta.topology.min.js",
+              "src/assets/js/new/vanta.waves.min.js"
             ]
           },
           "configurations": {

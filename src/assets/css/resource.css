@@ -1,0 +1,42 @@
+.fnBntZ .card {
+  width: 300px;
+  margin-left: 25px;
+  margin-bottom: 27px;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out 0s;
+  background-image: linear-gradient(
+      0deg,
+      rgba(32, 8, 77, 0.87),
+      rgba(6, 4, 90, 0.562)
+    ),
+    url("../Images/new/J4o.gif");
+  cursor: pointer;
+  height: 200px;
+  z-index: 1;
+  transform: scale(0.8);
+}
+
+.imjKNo {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgb(0 0 0 / 5%) 0px 20px 35px;
+}
+
+.fnBntZ .card p {
+  color: rgba(142, 199, 255, 0.5);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+.fnBntZ .card:hover {
+  background-color: #1d7dcb98;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 2px #1d7dcb9a;
+  transform: scale(0.85);
+}
