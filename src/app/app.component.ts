@@ -13,6 +13,13 @@ declare var $: any
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  myScriptElement:HTMLScriptElement;
+  myScript2Element:HTMLScriptElement;
+
+
+
+
+
   title = 'TLfront';
   year: string;
   flags = []
@@ -26,6 +33,19 @@ export class AppComponent implements OnInit {
   user_data = null
   events_href
   constructor(private api: ApiService, private router: Router) {
+
+    this.myScriptElement= document.createElement("script");
+    this.myScriptElement.src="assets/js/vanta.waves.min.js"   ;
+    document.body.appendChild(this.myScriptElement);
+  
+    this.myScript2Element= document.createElement("script");
+    this.myScript2Element.src="assets/js/script.js";
+    document.body.appendChild(this.myScript2Element);
+  
+  
+
+
+
     this.events_href="events"
     this.year = new Date().getFullYear().toString();
     this.time = (new Date().getTime()) / 1000

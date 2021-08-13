@@ -1,116 +1,123 @@
-<div id="loader">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TINKERERS' LAB</title>
 
-  <div class="pulse-container">
-    <div class="pulse-bubble pulse-bubble-1"></div>
-    <div class="pulse-bubble pulse-bubble-2"></div>
-    <div class="pulse-bubble pulse-bubble-3"></div>
+  <meta name="theme-color" content="#000000" />
+  <meta
+    name="description"
+    content="IIT Bombay TINKERERS  TINKERERS' LAB "
+  />
 
-  </div>
+ <!-- library imports -->
+ <link
+ rel="stylesheet"
+ href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+ integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+ crossorigin="anonymous"
+ />
 
-</div>
-<div class="nav mb-0 pr-1">
-  <input type="checkbox" id="nav-check">
-  <div class="nav-header">
-    <div class="nav-title">
-      <img src="..\..\assets\Images\TL1.jpg" width="35" height="35" alt=""><a class="navbar-brand" routerLink=""
-        style="color: white;">&nbsp; Tinkerers' Lab</a>
+  <link
+  rel="stylesheet"
+  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+
+
+
+      
+
+
+
+
+
+</head>
+
+
+
+
+
+<nav class="navbar  navbar-expand-md fixed-top shadow pt-2">
+  <a class="navbar-brand ml-2" href="/">
+    <img src="assets\Images\TL2.png" class="navbar-logo" height="60" width="60" />
+  </a>
+  <span
+    class="navbar-toggler"
+    data-toggle="collapse"
+    data-target="#collapsibleNavbar"
+  >
+    <div class="nav-icon" title="Menu">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
     </div>
-  </div>
-  <div class="nav-btn">
-    <label for="nav-check">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
-  </div>
-  <div id="uncheck" class="nav-links ml-auto">
-    <a class="text-primary mobile-view" *ngIf="logged_in">{{user_data.first_name}}
-      {{user_data.last_name}}-{{user_data.roll_number}}</a>
-      <a *ngIf="Check_Technician()" routerLink="technician" routerLinkActive="active-link">Technician</a>
-    <a routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
-      true}">Home</a>
-    <a routerLink="about" routerLinkActive="active-link">About</a>
-    <a [href]="events_href" routerLinkActive="active-link">Events</a>
-    <a routerLink="machinestatus" routerLinkActive="active-link">Machine Status</a>
-    <a routerLink="machinetut" routerLinkActive="active-link">Machine Tutorial</a>
-    <a *ngIf="logged_in" routerLink="inventory" routerLinkActive="active-link">Inventory</a>
-    <a routerLink="contact" routerLinkActive="active-link">Contact</a>
-    <a class="dropdown dropdown-toggl" id="dropdown-toggl" *ngIf="logged_in">
-      <a class="btn"><i class="fas fa-2x fa-user-circle "></i>&nbsp;<i class="fas fa-caret-down"></i></a>
-    </a>
-    <a class="pt-2 text-warning mobile-view" *ngIf="logged_in" routerLink="../cart">My Cart</a>
-    <a class="pt-3 text-success mobile-view" *ngIf="logged_in" routerLink="../approved">Issued Items</a>
-    <hr class="rounded mobile-view" *ngIf="logged_in">
-    <a routerLink=""  (click)="logout()" class="mobile-view">Logout</a>
-  </div>
-</div>
-<div *ngIf="logged_in" class="dropdown-men" id="dropdown-men">
+  </span>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item mx-3">
+        <a class="nav-link button-nav"*ngIf="Check_Technician()" routerLink="technician" routerLinkActive="active-link">
+          TECHNICIAN
+        </a>
+      </li>
+      <li class="nav-item mx-3">
+        <a class="nav-link button-nav"routerLink="" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+          true}">
+          HOME
+        </a>
+      </li>
+      <li class="nav-item mx-3">
+        <a class="nav-link button-nav"routerLink="about" routerLinkActive="active-link">
+          ABOUT
+        </a>
+      </li>
+      <li class="nav-item mx-3">
+        <a class="nav-link button-nav"  [href]="events_href" routerLinkActive="active-link">
+          EVENTS
+        </a>
+      </li>
+      <li class="nav-item mx-3">
+        <a class="nav-link button-nav"  routerLink="machinestatus" routerLinkActive="active-link">
+          MACHINE STATUS
+        </a>
+      </li>
+      <li class="nav-item mx-3">
+        <a class="nav-link button-nav"  routerLink="machinetut" routerLinkActive="active-link">
+          MACHINE TUTORIALS
+        </a>
+      </li>
+      <li class="nav-item mx-3">
+        <a class="nav-link button-nav"  *ngIf="logged_in" routerLink="inventory" routerLinkActive="active-link">
+          INVENTORY
+        </a>
+      </li>
+     
+      
+     
+      <li class="nav-item mx-3">
+        <a class="nav-link button-nav" routerLink="contact" routerLinkActive="active-link">
+          CONTACT
+        </a>
+      </li>
+      <a class="dropdown dropdown-toggl" id="dropdown-toggl" *ngIf="logged_in">
+        <a class="btn"><i class="fas fa-2x fa-user-circle "></i>&nbsp;<i class="fas fa-caret-down"></i></a>
+      </a>
+      <a class="pt-2 text-warning mobile-view"  routerLink="../cart">My Cart</a>
+      <a class="pt-3 text-success mobile-view" *ngIf="logged_in" routerLink="../approved">Issued Items</a>
+      <hr class="rounded mobile-view" *ngIf="logged_in">
+      <a routerLink="" *ngIf="logged_in" (click)="logout()" class="mobile-view">Logout</a>
+      
+        <div *ngIf="logged_in" class="dropdown-men" id="dropdown-men">
 
-  <div class="d-flex flex-column container">
-    <a class="pt-3 pb-4 text-primary">{{user_data.first_name}} {{user_data.last_name}}-{{user_data.roll_number}}</a>
-    <a class="pt-2 text-warning" routerLink="../cart">My Cart</a>
-    <a class="pt-3 text-success" routerLink="../approved">Issued Items</a>
-    <hr class="rounded">
-    <a class="pt-1 pb-2 text-danger" routerLink="" (click)="logout()">Logout</a></div>
-</div>
+          <div class="d-flex flex-column container">
+            <a class="pt-3 pb-4 text-primary">{{user_data.first_name}} {{user_data.last_name}}-{{user_data.roll_number}}</a>
+            <a class="pt-2 text-warning" routerLink="../cart">My Cart</a>
+            <a class="pt-3 text-success" routerLink="../approved">Issued Items</a>
+            <hr class="rounded">
+            <a class="pt-1 pb-2 text-danger" routerLink="" (click)="logout()">Logout</a></div>
+        </div>
+    
+    </ul>
+  </div>
+</nav>
 
 <router-outlet></router-outlet>
-<button id="scrollBtn" title="Go to top"><i class="fas fa-angle-double-up "></i></button>
-<!-- Footer -->
-<p></p>
-<div class="jumbotron jumbotron-fluid" id="footer">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-1"></div>
-      <div class="col-sm-6">
-        <h1 style="font-family: 'Delius Swash Caps', cursive;">Tinkerers' Lab</h1>
-        <p></p>
-        <a routerLink="contact" class="btn btn-primary">Get in touch</a>
-        <p></p>
-      </div>
-
-      <div class="col-sm-5" id="contact-info">
-        <ul>
-          <li><i class="fas fa-map-marker-alt pr-2"></i><a href="https://goo.gl/maps/7pt9kAvjsNK5zvzDA"
-              target="_blank">N5 Bay, Infinity Corridor, Nr. Mechanical Eng. Dept., IITB</a></li>
-          <li><i class="fas fa-envelope pr-2"></i><a
-              href="mailto:tinkererslaboratory@gmail.com">tinkererslaboratory@gmail.com</a></li>
-          <li><i class="fas fa-phone-alt pr-2"></i><a href="tel://022 2576 4381">022 2576 4381</a></li>
-          <li><i class="fas fa-clock pr-2"></i><span>24*7</span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <p></p>
-    </div>
-    <div class="row">
-      <div class="col-sm-5"></div>
-      <div class="col-sm-4">
-        <div>
-          <a class="pr-3" href="https://www.linkedin.com/company/tinkerers-lab/" id="linkedin" target="_blank"><i
-              class="fab fa-linkedin-in fa-2x"></i></a>
-          <a class="pr-3 pl-2" href="https://www.facebook.com/tinkererIITB/" id="facebook" target="_blank"><i
-              class="fab fa-facebook-f fa-2x"></i></a>
-          <a class="pl-2" href="https://www.instagram.com/tinkererslab.iitb/" id="instagram" target="_blank"><i
-              class="fab fa-instagram fa-2x"></i></a>
-        </div>
-      </div>
-      <div class="col-sm-3"></div>
-    </div>
-    <div class="row pt-3">
-      <p></p>
-    </div>
-    <div class="row pt-3">
-      <p></p>
-    </div>
-    <div class="row">
-      <div class="col-sm"></div>
-      <div class="col-sm">
-        <h5 style="color: grey;">
-          Copyright<i class="far fa-copyright p-2"></i>{{year}} All rights reserved
-        </h5>
-      </div>
-      <div class="col-sm"></div>
-    </div>
-  </div>
-</div>
