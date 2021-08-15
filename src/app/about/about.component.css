@@ -7,7 +7,7 @@
 }
 
 .area {
-  background: rgb(3, 16, 59);
+  background: ;
   width: 100vw;
   height: auto;
 }
@@ -1150,3 +1150,174 @@ img {margin-bottom: -8px;}
     transform: scale(1.05);
   }
 }
+.about {
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+}
+.about .header {
+  height: 100vh;
+  width: 100%;
+}
+.about h3 {
+  color: rgb(255, 255, 255);
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  margin-bottom: 27px;
+  max-width: 370px;
+}
+
+.about .header__content {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+}
+
+.about .botons {
+  margin-top: 10px;
+}
+
+.about .boton {
+  display: inline-block;
+  background-color: rgb(194, 3, 3);
+  padding: 5px 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  transform: scale(0.9);
+}
+
+.about .boton:hover {
+  background-color: rgba(194, 3, 3, 0.774);
+  color: rgba(255, 255, 255, 0.884);
+  transform: scale(1.2);
+}
+
+.about .whytinker,
+.ourmission,
+.ourvision {
+  background-color: transparent;
+  font-size: 16px;
+  line-height: 28px;
+  color: rgb(73, 107, 150);
+  /* max-width: 400px; */
+}
+
+.about .img__about {
+  width: 80%;
+  height: 90%;
+  margin-top: -50px;
+}
+
+/* team css */
+
+.our-team {
+  text-align: center;
+  margin-bottom: 100px;
+  z-index: 1;
+  position: relative;
+}
+.our-team .pic {
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+.our-team .pic:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.5s ease 0s;
+}
+.our-team:hover .pic:after {
+  opacity: 1;
+}
+.our-team .pic img {
+  width: 100%;
+  height: auto;
+}
+.our-team .social {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  opacity: 0;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  z-index: 1;
+  transition: all 0.5s ease 0s;
+}
+.our-team:hover .social {
+  opacity: 1;
+}
+.our-team .social li {
+  display: inline-block;
+}
+.our-team .social li a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  font-size: 15px;
+  color: #fff;
+  margin-right: 10px;
+  transition: all 0.5s ease 0s;
+}
+.our-team .social li a:hover {
+  background: #fff;
+  color: #000;
+}
+.our-team .team-content {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px dotted #ddd;
+  position: absolute;
+  bottom: -70px;
+  left: 0;
+  z-index: -1;
+  transition: all 0.5s ease 0s;
+}
+.our-team:hover .team-content {
+  border: 2px dotted #00adae;
+}
+.our-team .team-info {
+  width: 100%;
+  color: #464646;
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+}
+.our-team .title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #464646;
+  margin: 0 0 5px 0;
+  transition: all 0.5s ease 0s;
+}
+.our-team:hover .title {
+  color: #00adae;
+}
+.our-team .post {
+  display: block;
+  font-size: 14px;
+  color: #464646;
+}
+
+/* .our-team .img-team{
+    height:300px !important;
+    width:300px !important;
+} */
