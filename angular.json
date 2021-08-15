@@ -50,7 +50,8 @@
               "src/assets/js/new/text-auto.js",
               "src/assets/js/new/three.min.js",
               "src/assets/js/new/vanta.topology.min.js",
-              "src/assets/js/new/vanta.waves.min.js"
+              "src/assets/js/new/vanta.waves.min.js",
+              "src/assets/js/new/aosnew.js"
             ]
           },
           "configurations": {
