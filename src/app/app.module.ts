@@ -24,6 +24,7 @@ import { MachinetutComponent } from './machinetut/machinetut.component';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +50,8 @@ import {MatRadioModule} from '@angular/material/radio';
     YouTubePlayerModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    
+
     MatRadioModule,
     FacebookModule.forRoot(),
     ToastrModule.forRoot({

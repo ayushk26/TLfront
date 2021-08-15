@@ -12,6 +12,9 @@ import { environment } from '../../environments/environment';
   providers: [ApiService]
 })
 export class CartComponent implements OnInit {
+  myScriptElement:HTMLScriptElement;
+  myScript4Element:HTMLScriptElement;
+
 
   items = []
   customers = []
@@ -25,6 +28,15 @@ export class CartComponent implements OnInit {
 
   constructor(private api: ApiService,
     private router: Router) {
+
+
+    this.myScriptElement= document.createElement("script");
+    this.myScriptElement.src="assets/js/vanta.topology.min.js";
+    document.body.appendChild(this.myScriptElement);
+
+    this.myScript4Element= document.createElement("script");
+    this.myScript4Element.src="assets/js/script2.js";
+    document.body.appendChild(this.myScript4Element);
 
   }
 

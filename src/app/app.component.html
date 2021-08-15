@@ -98,26 +98,82 @@
           CONTACT
         </a>
       </li>
-      <a class="dropdown dropdown-toggl" id="dropdown-toggl" *ngIf="logged_in">
-        <a class="btn"><i class="fas fa-2x fa-user-circle "></i>&nbsp;<i class="fas fa-caret-down"></i></a>
-      </a>
-      <a class="pt-2 text-warning mobile-view"  routerLink="../cart">My Cart</a>
-      <a class="pt-3 text-success mobile-view" *ngIf="logged_in" routerLink="../approved">Issued Items</a>
-      <hr class="rounded mobile-view" *ngIf="logged_in">
-      <a routerLink="" *ngIf="logged_in" (click)="logout()" class="mobile-view">Logout</a>
-      
-        <div *ngIf="logged_in" class="dropdown-men" id="dropdown-men">
-
-          <div class="d-flex flex-column container">
-            <a class="pt-3 pb-4 text-primary">{{user_data.first_name}} {{user_data.last_name}}-{{user_data.roll_number}}</a>
-            <a class="pt-2 text-warning" routerLink="../cart">My Cart</a>
-            <a class="pt-3 text-success" routerLink="../approved">Issued Items</a>
-            <hr class="rounded">
-            <a class="pt-1 pb-2 text-danger" routerLink="" (click)="logout()">Logout</a></div>
+      <div class="dropdown" *ngIf="logged_in">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{user_data.first_name}} {{user_data.last_name}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item"  *ngIf="logged_in" routerLink="../cart">My Cart</a>
+          <a class="dropdown-item" *ngIf="logged_in" routerLink="../approved">Issued Items</a>
+          <a class="dropdown-item" routerLink=""  (click)="logout()" >Logout</a>
         </div>
+      </div>
+      
+        
     
     </ul>
   </div>
+
+  
+  
 </nav>
 
 <router-outlet></router-outlet>
+
+
+  <div class="jumbotron jumbotron-fluid" id="footer" style="background-color:rgb(2, 23, 26);">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-6">
+          <h1 style="font-family: 'Delius Swash Caps', cursive; color:#fff">Tinkerers' Lab</h1>
+          <p></p>
+          <a routerLink="contact" class="btn btn-primary">Get in touch</a>
+          <p></p>
+        </div>
+  
+        <div class="col-sm-5" id="contact-info">
+          <ul>
+            <li><i class="fas fa-map-marker-alt pr-2"></i><a href="https://goo.gl/maps/7pt9kAvjsNK5zvzDA"
+                target="_blank">N5 Bay, Infinity Corridor, Nr. Mechanical Eng. Dept., IITB</a></li>
+            <li><i class="fas fa-envelope pr-2"></i><a
+                href="mailto:tinkererslaboratory@gmail.com">tinkererslaboratory@gmail.com</a></li>
+            <li><i class="fas fa-phone-alt pr-2"></i><a href="tel://022 2576 4381">022 2576 4381</a></li>
+            <li><i class="fas fa-clock pr-2"></i><span style="color:white; ">24*7</span ></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <p></p>
+      </div>
+      <div class="row">
+        <div class="col-sm-5"></div>
+        <div class="col-sm-4">
+          <div>
+            <a class="pr-3" href="https://www.linkedin.com/company/tinkerers-lab/" id="linkedin" target="_blank"><i
+                class="fab fa-linkedin-in fa-2x"></i></a>
+            <a class="pr-3 pl-2" href="https://www.facebook.com/tinkererIITB/" id="facebook" target="_blank"><i
+                class="fab fa-facebook-f fa-2x"></i></a>
+            <a class="pl-2" href="https://www.instagram.com/tinkererslab.iitb/" id="instagram" target="_blank"><i
+                class="fab fa-instagram fa-2x"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-3"></div>
+      </div>
+      <div class="row pt-3">
+        <p></p>
+      </div>
+      <div class="row pt-3">
+        
+      </div>
+      <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+          <h5 style="color: grey;">
+            Copyright<i class="far fa-copyright p-2"></i> All rights reserved
+          </h5>
+        </div>
+        
+      </div>
+    </div>
+  </div>

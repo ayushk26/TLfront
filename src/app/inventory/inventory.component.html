@@ -1,4 +1,5 @@
 <!-- Loader -->
+
 <div id="super-overlay" class="super-overlay">
   <div id="mailSpinner">
     <div class="spinner-border text-primary" role="status">
@@ -6,9 +7,11 @@
     </div>
   </div>
 </div>
-
-
+<body style="background-color: rgb(3, 16, 59);">
+<div class="home1">
+<div claSS="mrgn">
 <!-- Search Bar -->
+<br><br><br><br><br><br>
 <div class="input-group text-center container col-md-4 mt-4">
   <input (keydown)="searchButton($event)" type="text" class="form-control " placeholder="Search for items"
     [(ngModel)]="item_query" />
@@ -27,10 +30,10 @@
 
   <div class="container">
     <div class="table-responsive">
-      <table class="table table-striped ">
+      <table class="table table-striped "style="color:white;">
         <thead>
-          <tr>
-            <th>Item Name</th>
+          <tr  >
+            <th >Item Name</th>
             <th>Id Required To Issue</th>
 
             <th>Add to cart</th>
@@ -88,14 +91,14 @@
 
 
 
-<div *ngIf="!searched">
+<div *ngIf="!searched" >
   <h1>ELECTRONICS</h1>
   <ul>
     <li>
       <h3><button  mat-raised-button color='primary' (click)="display_table(0)">Sensors</button></h3>
       <div class="container {{displayArray[0]}}">
         <div class="table-responsive">
-          <table class="table table-striped ">
+          <table class="table table-striped "style="color:white;" >
             <thead>
               <tr>
                 <th>Item Name</th>
@@ -155,7 +158,7 @@
       <h3><button  mat-raised-button color='primary' (click)="display_table(1)">PCB Boards</button></h3>
       <div class="container {{displayArray[1]}}">
         <div class="table-responsive">
-          <table class="table table-striped ">
+          <table class="table table-striped " style="color:white;">
             <thead>
               <tr>
                 <th>Item Name</th>
@@ -214,7 +217,7 @@
           <h6><button  mat-raised-button color='warn'  (click)="display_table(3)">Capacitors</button></h6>
           <div class="container {{displayArray[3]}}">
             <div class="table-responsive">
-              <table class="table table-striped ">
+              <table class="table table-striped "  style="color:white;">
                 <thead>
                   <tr>
                     <th>Item Name</th>
@@ -273,7 +276,7 @@
           <h6><button  mat-raised-button color='warn' (click)="display_table(2)">Resistors</button></h6>
           <div class="container {{displayArray[2]}}">
             <div class="table-responsive">
-              <table class="table table-striped ">
+              <table class="table table-striped "  style="color:white;">
                 <thead>
                   <tr>
                     <th>Item Name</th>
@@ -332,7 +335,7 @@
           <h6><button  mat-raised-button color='warn' (click)="display_table(4)">Jumpers</button></h6>
           <div class="container {{displayArray[4]}}">
             <div class="table-responsive">
-              <table class="table table-striped ">
+              <table class="table table-striped "  style="color:white;">
                 <thead>
                   <tr>
                     <th>Item Name</th>
@@ -391,7 +394,7 @@
           <h6><button  mat-raised-button color='warn' (click)="display_table(5)">LEDs</button></h6>
           <div class="container {{displayArray[5]}}">
             <div class="table-responsive">
-              <table class="table table-striped ">
+              <table class="table table-striped "  style="color:white;">
                 <thead>
                   <tr>
                     <th>Item Name</th>
@@ -459,7 +462,7 @@
       <h3><button  mat-raised-button color='primary' (click)="display_table(6)">Power Tools </button></h3>
       <div class="container {{displayArray[6]}}">
         <div class="table-responsive">
-          <table class="table table-striped ">
+          <table class="table table-striped "  style="color:white;">
             <thead>
               <tr>
                 <th>Item Name</th>
@@ -519,7 +522,7 @@
           <h6><button  mat-raised-button color='warn' (click)="display_table(7)">Screws</button></h6>
           <div class="container {{displayArray[7]}}">
             <div class="table-responsive">
-              <table class="table table-striped ">
+              <table class="table table-striped "  style="color:white;">
                 <thead>
                   <tr>
                     <th>Item Name</th>
@@ -578,7 +581,7 @@
           <h6><button  mat-raised-button color='warn' (click)="display_table(8)">Nuts</button></h6>
           <div class="container {{displayArray[8]}}">
             <div class="table-responsive">
-              <table class="table table-striped ">
+              <table class="table table-striped "   style="color:white;">
                 <thead>
                   <tr>
                     <th>Item Name</th>
@@ -637,7 +640,7 @@
           <h6><button  mat-raised-button color='warn' (click)="display_table(9)">Bolts</button></h6>
           <div class="container {{displayArray[9]}}">
             <div class="table-responsive">
-              <table class="table table-striped ">
+              <table class="table table-striped "   style="color:white;">
                 <thead>
                   <tr>
                     <th>Item Name</th>
@@ -695,6 +698,11 @@
       </ul>
     </li>
   </ul>
+</div>
+</div>
+<br><br><br><br><br><br>
+</div></body>
+
   <!-- <h1 (click)="display_table(10)">MACHINES</h1>
   <div class="container {{displayArray[10]}}">
     <div class="table-responsive">

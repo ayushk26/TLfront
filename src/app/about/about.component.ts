@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import * as AOS from 'aos';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -12,7 +12,7 @@ export class AboutComponent implements OnInit {
   myScript2Element:HTMLScriptElement;
   myScript3Element:HTMLScriptElement;
   myScript4Element:HTMLScriptElement;
-  myScript5Element:HTMLScriptElement;
+  
 
 
   constructor() { 
@@ -35,9 +35,7 @@ export class AboutComponent implements OnInit {
     this.myScript4Element.src="assets/js/script2.js";
     document.body.appendChild(this.myScript4Element);
 
-    this.myScript5Element= document.createElement("script");
-    this.myScript5Element.src="assets/js/aos.js";
-    document.body.appendChild(this.myScript5Element);
+   
 
 
 
@@ -46,6 +44,19 @@ export class AboutComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    AOS.init({
+      offset:120,
+      duration: 1000,
+      once: true
+    });
+    document.querySelectorAll('img')
+     .forEach((img)=>
+     img.addEventListener('load',()=>
+         AOS.refresh()
+     )
+     
+     
+     );
   }
 
 }

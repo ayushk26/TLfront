@@ -1,7 +1,7 @@
-a {
+/* a {
     color: grey;
     text-decoration: none;
-}
+} */
 
 /* .contact-form {
     
@@ -14,4 +14,80 @@ a {
     height: 190vh;
     
 } */
+.contact {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    padding-top: 150px;
+    color: white;
+  }
+  #map {
+    width: 100%;
+    height: 300px;
+  }
   
+  .parallax {
+    /* The image used */
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.87),
+        rgba(0, 0, 0, 0.562)
+      ),
+      url("/assets/Images/par.jpg");
+  
+    /* Set a specific height */
+    min-height: 200px;
+    color: #fff;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  input {
+    border-radius: 35px;
+    text-decoration: capitalize;
+  }
+  
+  .contact-info i {
+    font-size: 35px;
+    width: 38px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
+  
+  .contact-info i.fa-envelope,
+  .contact-info i.fa-phone,
+  .contact-info i.fa-marker {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  
+  .contact-info p {
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin: 0;
+  }
+  .contact-info p a {
+    color: #5383d3;
+    text-decoration: none;
+  }
+  
+  .card {
+    background-color: transparent !important;
+  }
+  h1{
+
+    font-size: 80px;
+  }
+  h4{
+
+    font-family: fantasy;
+    font-size: 30px;
+  }

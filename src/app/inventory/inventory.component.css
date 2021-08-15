@@ -64,7 +64,7 @@ a:hover {
 }
 
 .expanded {
-  background-color: lightblue;
+  background-color:  rgb(3, 16, 59);
   color: white;
   position: absolute;
   top: 20%;
@@ -84,4 +84,18 @@ a:hover {
     display: none;
   }
 }
+.home1{
 
+  margin-top: 0px;
+  margin-bottom: -50px;
+}
+
+
+
+
+h1,h3 {
+
+  color:white;
+  font-family: "Fantasy";
+
+}

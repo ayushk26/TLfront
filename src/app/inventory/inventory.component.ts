@@ -12,6 +12,11 @@ import { environment } from '../../environments/environment';
 })
 export class InventoryComponent implements OnInit {
 
+  myScriptElement:HTMLScriptElement;
+  myScript2Element:HTMLScriptElement;
+
+
+
   items = [];
   item_query
   searched: boolean = false;
@@ -28,6 +33,17 @@ export class InventoryComponent implements OnInit {
   newFlag
   mail = { 'roll_number': '', 'subject': '', 'message': '', 'html_message': '', 'recipient_list': '' }
   constructor(private api: ApiService, private router: Router) {
+  
+    this.myScriptElement= document.createElement("script");
+    this.myScriptElement.src="assets/js/vanta.waves.min.js"   ;
+    document.body.appendChild(this.myScriptElement);
+  
+    this.myScript2Element= document.createElement("script");
+    this.myScript2Element.src="assets/js/script.js";
+    document.body.appendChild(this.myScript2Element);
+
+
+
     this.newRequest = { id: -1, item: -1, roll_number: '123456789', quantity: 1 }
     this.item_query = ''
   }

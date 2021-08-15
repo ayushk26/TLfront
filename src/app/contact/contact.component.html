@@ -1,19 +1,106 @@
-<div class="container mt-5 mb-5">
-    <div>
-        <h3>Contact Information</h3>
+
+<body style="background-color: rgb(3, 16, 59);">r><br><br><br><br><br><br><br>
+<div class="contact-header">
+    <div class="parallax">
+       
+          <div class="container" id="funFacts">
+             <h1
+                class="display-3"
+                style=" text-align: center ; color: #fff "
+                data-aos="fade-up"
+                >
+                ContacUs
+             </h1>
+          </div>
+       
     </div>
-    <div class="row mx-auto mt-5">
-        <div class="col-sm"><a href="https://goo.gl/maps/7pt9kAvjsNK5zvzDA" target="_blank"> Address: N5 Bay,
-                Infinity Corridor, Nr. Mechanical Eng. Dept., IIT Bombay</a></div>
-        <div class="col-sm">Phone:<a href="tel://022 2576 4381">022 2576 4381</a></div>
-        <div class="col-sm">Email:<a href="mailto:tinkererslaboratory@gmail.com">tinkererslaboratory@gmail.com</a></div>
-        <div class="col-sm">Website:<a routerLink="">www.tinkerers-lab.org</a></div>
+ </div>
+ <!-- 
+    -->
+ <div class="container">
+ <div class=" bg-transperent  row justify-content-center shadow">
+    <!--Grid column-->
+    <div class="col-lg-6 mb-4" data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
+       <!--Form with header-->
+       <div class="card  bg-transperent shadow ">
+          <div class="card-body " style="background-color: rgb(1, 14, 56);">
+             <!--Header-->
+             <div class="container bg-transperent text-center py-2 mb-4" >
+                <h4 style="font-weight: bol; color:cornsilk "> Write to us:</h4>
+             </div>
+             <br>
+             <!--Body-->
+             <form class=" needs-validation" id="idForm" >
+                <div class="d-flex justify-content-between "  style="display:inline-block;">
+                   <span class="form-group flex-grow-1 mr-2" style="display:inline-block">
+                   <label for="form-firstname" style="justify-content: start;color:cornsilk" ><b>First Name</b><span style="color:red">*</span></label>
+                   <input type="text" id="form-firstname" class=" form-control" name="firstname" required />
+                   </span>
+                   <span class="form-group flex-grow-1" style="display:inline-block">
+                   <label for="form-lastname" style="justify-content: start; color:cornsilk"><b>Last Name</b><span style="color:red">*</span></label>
+                   <input type="text" id="form-lastname" class=" form-control" name="lastname" required />
+                   </span>
+                </div>
+                <div class="form-group ">
+                   <label for="form-email" style="color:cornsilk"><b>Email</b><span style="color:red">*</span></label>
+                   <input type="email" name="email" id="form-email" class=" form-control " required /> 
+                </div>
+                <div class="form-group ">
+                   <label for="form-text" style="color:cornsilk"><b>Complaint</b><span style="color:red">*</span></label>
+                   <textarea id="form-text" name="Complaint" class=" form-control " rows="4" required></textarea>
+                </div>
+                <div class="form-group ">
+                   <label for="form-text" style="color:cornsilk"><b>Message</b><span style="color:red">*</span></label>
+                   <textarea id="form-text" name="message" class=" form-control " rows="4" required></textarea>
+                </div>
+                <div class="mt-4 d-flex justify-content-center">
+                   <button type="submit"  style="background-color: #172DC9; color:white" class="btn  px-3 shadow">Submit</button>
+                </div>
+             </form>
+          </div>
+       </div>
+       <!--Form with header-->
     </div>
-</div>
-<br>
-<div class="container iframe-container mt-5">
-    <h2>DO NOT HESITATE TO CONTACT US</h2>
-    <iframe class="contact-form"
-        src="https://docs.google.com/forms/d/e/1FAIpQLSeCUM4XughrEST_G5K5NkxzGrsQa7rzlSdsYUSRgS9mUTpXTA/viewform?embedded=true"
-        width=100% height="1400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">Loading...</iframe>
-</div>
+    <!--Grid column-->
+    <!--Grid column-->
+    <div class="col-lg-6 address-info mb-4" data-aos="zoom-in">
+       <!--Buttons-->
+       <!--Header-->
+       <div class="container bg-transperent text-center mt-4" >
+          <h4 style="font-weight: bol; color:cornsilk"> Reach out to us:</h4>
+       </div>
+       <br>
+       <div class="  py-5 contact-info"  >
+          <div class="d-flex justify-content-between">
+             <div class="text-center ">
+                <i class="fa fa-map-marker " style="color:black;"></i>
+                <br>
+                <p class="d-flex align-self-center "><a href="#" style="color:cornsilk">  IIT Bombay </a></p>
+             </div>
+             <div class="text-center ">
+                <i class="fa fa-phone"  style="color:black;"></i>
+                <br>
+                <p class="d-flex align-self-center"><a href="#" style="color:cornsilk">+91 7735944281</a></p>
+             </div>
+             <div class="text-center ">
+                <i class="fa fa-envelope"  style="color:black;"></i>
+                <br>
+                <p class="d-flex align-self-center"><a href="#" style="color:cornsilk">xyz@gmail.com</a></p>
+             </div>
+          </div>
+          <br>
+          <iframe
+             id="map"
+             frameborder="0"
+             style="filter: invert(90%)"
+             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCunBuiI0IXYsQh_JhhFcGJTYub25TM8ls
+             &q=Tinkerers+Laboratory+IIT+BOMBAY,Mumbai"
+             allowfullscreen
+             ></iframe>
+       </div>
+       <!--Grid column-->
+    </div>
+ </div>
+ </div>
+ <br><br><br><br>
+</body>

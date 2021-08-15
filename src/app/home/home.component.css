@@ -1367,11 +1367,13 @@ animation: push-out 0.6s;
 .resources h3{
  
   color: rgb(255, 255, 255);
-  font-size: 48px;
+  font-size: 90px;
   line-height: 1.2;
   font-weight: 300;
+  font-family: Brush Script MT, Brush Script Std, cursive;
   letter-spacing: -0.025em;
   margin-bottom: 27px;
+  margin-left: 550px;
   max-width: 370px;
 
   
@@ -1391,7 +1393,10 @@ animation: push-out 0.6s;
   margin: 0px;
 }
 
+.card{
 
+  margin-left:140px;
+}
 
 .fnBntZ .card {
   width: 300px;
@@ -1442,14 +1447,17 @@ animation: push-out 0.6s;
   position: relative;
 }
 
+
 .projects h3{
  
   color: rgb(255, 255, 255);
-  font-size: 48px;
+  font-size: 70px;
   line-height: 1.2;
   font-weight: 300;
+  font-family: Brush Script MT, Brush Script Std, cursive;
   letter-spacing: -0.025em;
   margin-bottom: 27px;
+  margin-left: 600px;
   max-width: 370px;
 
   
@@ -1501,11 +1509,13 @@ animation: push-out 0.6s;
 
 .testimonials h3 {
   color: rgb(255, 255, 255);
-  font-size: 48px;
+  font-size: 100px;
+  font-family: Brush Script MT, Brush Script Std, cursive;
   line-height: 1.2;
   font-weight: 300;
   letter-spacing: -0.025em;
   margin-bottom: 27px;
+  margin-left: 550px;
   max-width: 370px;
 }
 
@@ -1524,6 +1534,7 @@ animation: push-out 0.6s;
   box-shadow: rgb(0 0 0 / 5%) 0px 20px 35px;
   color: #fff;
   max-width: 700px;
+  margin-left: 200px;
 }
 .quote {
   font-size: 45px;
