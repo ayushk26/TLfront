@@ -164,6 +164,15 @@
   margin-left: 3vw;
 }
 
+
+.carousel-item{
+  left:10%;
+}
+.test{
+  margin-left: 7.5%;
+  min-width: 0;
+}
+
 .overlay {
   position: fixed;
   display: none;
