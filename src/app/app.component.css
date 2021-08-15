@@ -133,7 +133,7 @@ hr.rounded {
 }
 
 #footer {
-  background-color: #24bdc9;
+  background-color: rgb(3, 16, 59);
   color: white;
   margin-bottom: 0;
   padding-bottom: 0;
@@ -155,7 +155,7 @@ hr.rounded {
 }
 
 #footer .btn {
-  color: #24bdc9;
+  color: rgb(3, 16, 59);
   background-color: white;
   border-radius: 20px;
   border-width: 0;
