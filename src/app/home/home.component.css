@@ -1359,25 +1359,63 @@ animation: push-out 0.6s;
 }
 
 .resources{
-  margin:10px;
+  margin:0px;
   padding:50px 50px;
   position: relative;
+  background-image: url('data:image/svg+xml,%3Csvg width="52" height="26" viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+  background-color: rgb(3, 16, 59);
+  background-size:10%;
+  animation: bgScroll 20s linear infinite;
 }
 
-.resources h3{
- 
-  color: rgb(255, 255, 255);
-  font-size: 90px;
-  line-height: 1.2;
-  font-weight: 300;
-  font-family: Brush Script MT, Brush Script Std, cursive;
-  letter-spacing: -0.025em;
-  margin-bottom: 27px;
-  margin-left: 550px;
-  max-width: 370px;
 
+@keyframes bgScroll {
+  0% {
+    background-position : 0px 0px
+  }
+  100% {
+    background-position : 0px -808px
+  }
+}
+#container {
+  position: absolute;
+  
+  width: 100vw;
+  height: 80pt;
+  top: 0;
+  bottom: 0;
+
+  filter: url(#threshold) blur(0.6px);
+}
+
+#text1,
+#text2 {
+  position: absolute;
+  width: 100%;
+  display: inline-block;
+
+  font-family: "Raleway", sans-serif;
+  font-size: 80pt;
+  color: rgb(3, 250, 217);
+  text-align: center;
+
+  user-select: none;
+}
+
+video {
+	border: 4px groove olive;
+	display: inline-block;
+	border-radius: 15px;
+	background: black;
+	padding: 2%;
   
 }
+
+
+
+
+
+
 .patternImg{
   position: absolute;
   left: -20%;
@@ -1442,9 +1480,13 @@ animation: push-out 0.6s;
 }
 
 .projects{
-  margin:10px;
+  
   padding:50px 50px;
   position: relative;
+  background-image: url('data:image/svg+xml,%3Csvg width="52" height="26" viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+  background-color: rgb(3, 16, 59);
+  background-size:10%;
+  animation: bgScroll 20s linear infinite;
 }
 
 
@@ -1690,5 +1732,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+ 
+.logo{
 
+margin-left: 800px;
+
+
+}
 

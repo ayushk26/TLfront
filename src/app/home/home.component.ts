@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
+declare var VanillaTilt;
 declare var $: any
 import * as Flickity from 'flickity'
 
@@ -14,6 +15,8 @@ declare var rCounter: any;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  
   myScriptElement:HTMLScriptElement;
 
   myScript2Element:HTMLScriptElement;
@@ -73,6 +76,11 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    VanillaTilt.init(document.querySelectorAll(".logo"),{ max: 25, speed: 400 });
+    
+
+
+
     var testimonials = document.querySelector('.main-carousel');
     var flkty = new Flickity(testimonials, {
       autoPlay: 5000,

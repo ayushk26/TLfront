@@ -185,11 +185,11 @@ export class ApiService {
       var roll_number = window.atob(JSON.parse(this.getJdata(environment.jdataKey)).roll_number);
       environment.technicians.forEach(repeat)
       function repeat(technician) {
-        if (roll_number != technician) { x = true }
+        if (roll_number == technician) { x = true }
       }
       return x
     }
-    else return true
+    else return false
   }
 
 }
