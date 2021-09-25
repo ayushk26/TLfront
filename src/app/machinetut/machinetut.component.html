@@ -1,17 +1,20 @@
-<div class="cards">
-  <div class="card" *ngFor="let item of lis">
-    <div class="card-header">
-      {{item.name}}
-    </div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <p>{{item.desc}}</p>
-        <div class="video">
-          <youtube-player videoId={{item.vidlink}} suggestedQuality="highres" [height]="200" [width]="400"
+<html style="background-color: black;">
+
+<body *ngFor="let item of lis  ">
+  <div class="card" data-aos="fade-left">
+    <div class="card__content">
+      <div class="card__front">
+        <h3 class="card__title"> {{item.name}}</h3>
+        <p class="card__subtitle">Wise Words</p>
+      </div> 
+
+      <div class="card__back">
+        <p class="card__body">{{item.desc}} <p>
+            <p class="card__body" ><youtube-player videoId={{item.vidlink}} suggestedQuality="highres" [height]="50" [width]="50"
             [startSeconds]="0">
-          </youtube-player>
-        </div>
-      </blockquote>
+          </youtube-player><p>
+      </div>
     </div>
-  </div>
-</div>
+   </div>
+</body>
+</html>

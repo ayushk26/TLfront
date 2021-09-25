@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { ApiService } from '../api.service';
 import { Router } from '@angular/router';
+declare var VanillaTilt;
 declare var $: any
 import * as Flickity from 'flickity'
 
@@ -14,6 +15,22 @@ declare var rCounter: any;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  
+  myScriptElement:HTMLScriptElement;
+
+  myScript2Element:HTMLScriptElement;
+
+  myScript3Element:HTMLScriptElement;
+
+  myScript4Element:HTMLScriptElement;
+
+  myScript5Element:HTMLScriptElement;
+
+
+
+
+
   loginUrl = environment.loginUrl;
   code: any;
   user_data
@@ -30,9 +47,40 @@ export class HomeComponent implements OnInit {
   }
 
 
-  constructor(private api: ApiService, private router: Router) { }
+  constructor(private api: ApiService, private router: Router) {
+    this.myScriptElement= document.createElement("script");
+    this.myScriptElement.src="assets/js/vanta.waves.min.js";
+    document.body.appendChild(this.myScriptElement);
+    
+    
+    this.myScript2Element= document.createElement("script");
+    this.myScript2Element.src="assets/js/script.js";
+    document.body.appendChild(this.myScript2Element);
+
+
+    this.myScript3Element= document.createElement("script");
+    this.myScript3Element.src="assets/js/home.js";
+    document.body.appendChild(this.myScript3Element);
+
+    this.myScript4Element= document.createElement("script");
+    this.myScript4Element.src="assets/js/text-auto.js";
+    document.body.appendChild(this.myScript4Element);
+
+    this.myScript5Element= document.createElement("script");
+    this.myScript5Element.src="assets/js/three.min.js";
+    document.body.appendChild(this.myScript5Element);
+
+
+
+
+   }
 
   ngOnInit(): void {
+    VanillaTilt.init(document.querySelectorAll(".logo"),{ max: 25, speed: 400 });
+    
+
+
+
     var testimonials = document.querySelector('.main-carousel');
     var flkty = new Flickity(testimonials, {
       autoPlay: 5000,
