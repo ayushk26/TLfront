@@ -2,7 +2,7 @@
   transition: height 1s;
 }
 .main-carousel .carousel {
-  background: #EEE;
+  background: #5f4b8b;
 }
 
 .main-carousel .carousel-cell {
@@ -96,6 +96,7 @@
 
 #tools .card {
   margin-bottom: 3vh;
+  background-color: #FD6A02;
 }
 
 #tools .card-footer {
