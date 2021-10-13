@@ -1,5 +1,4 @@
 <body>
-
   <!-- upper section -->
   <div class="home1" >
     <section data-aos="fade-up">
@@ -29,12 +28,13 @@
       </div> */} -->
   
       <div id="start">
-        <a data-aos="fade-up" id="st" *ngIf="!logged_in" href="{{loginUrl}}">
+        <!-- <button data-aos="fade-up" id="st">
           Login With SSO
-        </a>>
-        <a data-aos="fade-up" id="st" *ngIf="logged_in" href="">
-          Logged in as {{user_data.roll_number}}
-        </a>
+        </button> -->
+        <a *ngIf="!logged_in" id="st" data-aos="fade-up" href={{loginUrl}} class="btn btn-primary px-4 py-2">Login with
+          SSO</a>
+        <a *ngIf="logged_in" id="st" data-aos="fade-up" href="" class="btn btn-primary px-4 py-2">Logged in as
+          {{user_data.roll_number}}</a>
       </div>
     </section>
   </div>

@@ -6,6 +6,7 @@ export const environment = {
   technician_mails:"['tanmay.v.hiremath@gmail.com','gakshat2207@gmail.com']",
   production: false,
   serverUrl: 'https://itc.gymkhana.iitb.ac.in/tl/',
+  // serverUrl:'http://127.0.0.1:8000/',
   loginUrl: 'https://gymkhana.iitb.ac.in/profiles/oauth/authorize/?client_id=4IIH8kT8qmBRLQnmrjwauuos60vC9xJrXZD33tIV&response_type=code&scope=basic profile picture secondary_emails ldap program',
   jdataKey:'Kb8VUT3E9q7vshw21',
   technicians:['tanmay','Technician2','Technician3', '20D170037']//store the username of django use(which in turn should be the roll number of a customer in customers model)
