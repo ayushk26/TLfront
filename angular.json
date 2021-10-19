@@ -39,7 +39,8 @@
               "src/assets/js/text-auto.js",
               "node_modules/aos/dist/aos.js",
               "src/assets/js/three.min.js",
-              "src/assets/js/vanta.waves.min.js"
+              "src/assets/js/vanta.waves.min.js",
+              "src/assets/js/vanta.net.min.js"
             ]
           },
           "configurations": {

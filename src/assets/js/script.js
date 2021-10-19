@@ -1,13 +1,14 @@
-VANTA.WAVES({
+VANTA.NET({
     el: ".home1",
     mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-          // minHeight: 200.0,
-          // minWidth: 200.0,
-        scale: 1.0,
-        scaleMobile: 1.0,
-        color: 0x6052a,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    color: 0xa96379,
+    backgroundColor: 0xbfbfcf
   })
   $(window).on('load', function() {
     AOS.init({

@@ -3,9 +3,6 @@
 .container1 {
   width: 250px;
   height: 250px;
-  
-  
-  
   background: url("https://i.pinimg.com/564x/6f/5a/b1/6f5ab1b470beeeeaf285bb451c63ac8f.jpg");
   background-color: black;
   background-size: cover;
@@ -142,13 +139,16 @@ animation: rotate 10s infinite linear;
   height: 100vh;
   width: 100%;
   /* position:relative; */
+  background-image: url("https://source.unsplash.com/1600x900/?nature,water");
 }
 
 .home1 section {
   position: absolute;
   left: 10%;
-  top: 45%;
+  top: 30%;
   text-align: left !important;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .home1 section .tag {
@@ -268,10 +268,11 @@ span.gold-title {
   height: 40px;
   width: 160px;
   text-align: center;
-  background: linear-gradient(45deg, rgb(151, 148, 148), rgb(4, 4, 94));
+  background: transparent;
+  border-color: white;
+  border-style: solid;
   color: white;
   outline: none;
-  border: none;
   text-decoration: none;
   font-size: 16px;
   letter-spacing: 1px;
@@ -279,6 +280,8 @@ span.gold-title {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  margin-left: 90%;
+  margin-top: 25%;
 }
 
 #start .mess-us {
@@ -1778,7 +1781,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: rgb(3, 16, 59);
+  background: white;
   background-image: linear-gradient(
     135deg,
     rgba(64, 219, 216, 0.15) 0%,
