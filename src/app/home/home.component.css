@@ -1,19 +1,20 @@
 .flickity-viewport {
   transition: height 1s;
+  width: 90%;
 }
 .main-carousel .carousel {
   background: #EEE;
 }
 
 .main-carousel .carousel-cell {
-  width: 60%;
-  margin-right: 25px;
+  width: 50%;
   border-radius: 5px;
 }
 
 .project-carousel .carousel-cell{
-  width: 66%;
+  width: 30%;
   margin: 30px;
+  
 }
 
 .project-carousel img{
