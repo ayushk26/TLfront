@@ -1,13 +1,36 @@
+.title{
+    text-align: center;
+    font-size: 70px;
+    font-family: 'Times New Roman', Times, serif;
+}
 .cards{
     padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 .card{
-    margin: 10px;
+    width: 42%;
+    min-width: fit-content;
+    min-width: 450px;
+    margin: 30px;
+}
+.card blockquote{
+    margin-top: 2vh;
+}
+.card-body{
+    justify-content: space-evenly;
 }
 .video{
-    margin-top: 20px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
 }
+
 .card-header{
-    font-size: x-large;
+    font-size: xx-large;
     font:bold;
+    text-align: center;
+    font-family:cursive;
 }
+
