@@ -358,7 +358,7 @@ img {margin-bottom: -8px;}
 }
 
 .conta2 .card:nth-child(8),.conta2 .card:nth-child(11){
-  width: 21rem;
+  width: 22rem;
   background-color: #ebeef8;
   display: flex;
   flex-direction: column;
@@ -461,14 +461,17 @@ img {margin-bottom: -8px;}
   margin: 2rem 0rem 2rem 1rem;
   box-shadow: .5rem .5rem 3rem rgba(0,0,0,0.2);
 }
-.conta2 .card:nth-child(8) .card-img,.conta2 .card:nth-child(9) .card-img,.conta2 .card:nth-child(10) .card-img{
-  width: 100%;
-  height: 14rem;
-  object-fit: cover;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 78%, 0% 100%);
+.conta2 .card:nth-child(8){
+  width: 21rem;
+  background-color: #ebeef8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0rem 2rem 1rem;
+  box-shadow: .5rem .5rem 3rem rgba(0,0,0,0.2);
 }
-.conta2 .card:nth-child(11) .card-img,.conta2 .card:nth-child(12) .card-img,.conta2 .card:nth-child(13) .card-img{
+.conta2 .card:nth-child(10) .card-img,.conta2 .card:nth-child(11) .card-img,.conta2 .card:nth-child(12) .card-img{
   width: 100%;
   height: 14rem;
   object-fit: cover;
@@ -499,46 +502,41 @@ img {margin-bottom: -8px;}
   margin: 0rem;
   text-align: center;
 }
-.conta2 .card:nth-child(10) h1,.conta2 .card:nth-child(8) h1,.conta2 .card:nth-child(9) h1{
-  font-size: 2.7rem;
-  color: white;
-  margin-top: -10rem;
-  z-index:29;
-  padding: 0 3.2rem 4.2rem 3.2rem;
-}
-.conta2 .card:nth-child(11) h1,.conta2 .card:nth-child(12) h1,.conta2 .card:nth-child(13) h1{
+
+.conta2 .card:nth-child(10) h1,.conta2 .card:nth-child(11) h1,.conta2 .card:nth-child(12) h1{
   font-size: 2.7rem;
   color: white;
   margin-top: -10rem;
   z-index:29;
   padding-bottom: 4.2rem;
 }
-.conta2 .card:nth-child(8) .job-title,.conta2 .card:nth-child(9) .job-title,.conta2 .card:nth-child(10) .job-title{
+
+.conta2 .card:nth-child(8) .job-title{
   color: #777;
+  font-size: 1rem;
+  font-weight: 1000;
+  margin: 0;
+  padding-bottom: 0.4rem;
+
+}
+.conta2 .card:nth-child(10) .job-title,.conta2 .card:nth-child(11) .job-title,.conta2 .card:nth-child(12) .job-title{
+  color:  #333;
   font-size: 2rem;
   font-weight: 1000;
   margin: 0;
   padding-bottom: 1.4rem;
 
 }
-.conta2 .card:nth-child(11) .job-title,.conta2 .card:nth-child(12) .job-title,.conta2 .card:nth-child(13) .job-title{
-  color: #777;
-  font-size: 2rem;
-  font-weight: 1000;
-  margin: 0;
-  padding-bottom: 1.4rem;
-
-}
-.conta2 .card:nth-child(8) .about,.conta2 .card:nth-child(9) .about,.conta2 .card:nth-child(10) .about{
-  font-size: 1.3rem;
+.conta2 .card:nth-child(8)  .about{
+  font-size: 1.1rem;
   margin: 0 0;
   font-style: italic;
   text-align: center;
   color: #333;
-  padding-bottom: 2rem;
+  padding-bottom: -1rem;
   width: 100%
 }
-.conta2 .card:nth-child(11) .about,.conta2 .card:nth-child(12) .about,.conta2 .card:nth-child(13) .about{
+.conta2 .card:nth-child(10) .about,.conta2 .card:nth-child(11) .about,.conta2 .card:nth-child(12) .about{
   font-size: 1.1rem;
   margin: 0 0;
   font-style: italic;
@@ -547,6 +545,9 @@ img {margin-bottom: -8px;}
   padding-bottom: 0.3rem;
   width: 100%
 }
+
+
+
 
 .job-title{
   color: #777;
