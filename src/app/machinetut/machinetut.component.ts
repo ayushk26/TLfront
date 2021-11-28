@@ -41,7 +41,7 @@ export class MachinetutComponent implements OnInit {
             let itemlist = this.items
             for (let i = 0; i < tut.length; i++) {
               let link = tut[i].videoLink;
-              link = link.split('/')
+              link = link.split('?v=')
               link = link[link.length -1];
               let description = tut[i].description;
               let pk = tut[i].machineName;
